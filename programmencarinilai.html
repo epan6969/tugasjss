@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <formn action="" method="post" onsubmit="return false">
+        masukan X <input type="number" id="X"><br>
+        masukan Y <input type="number" onchange="hasil()" id="Y"><br>
+    </formn>
+    <P id="Q"></P>
+    <p id="P"></p>
+   <script>
+    function hasil(){
+     let X= parseInt(document.getElementById('X').value)
+    let Y =parseInt (document.getElementById('Y').value)
+    let P = X + Y
+    document.getElementById('P').innerHTML="jadi nilai P=" + P
+    if(P>0){
+      let  Q = X * Y
+    }else{
+     Q = X / Y
+    }
+    document.getElementById("Q").innerHTML="jadi nilai Q=" + Q
+      }  </script>
+
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seblak Bu Rina</title>
+</head>
+<body>
+    <h1>Seblak Ibu Rina ASELI</h1>
+    <form method="post" onsubmit="return false">
+        <input type="checkbox" name="menu1" id="menu1" value="ori"> Seblak Ori <input type="number" name="jml_ori" id="jml_ori"><br>
+        <input type="checkbox" name="menu2" id="menu2" value="tulang"> Seblak Tulang <input type="number" name="jml_tgl" id="jml_tgl"><br>
+        <input type="checkbox" name="menu3" id="menu3" value="spesial"> Seblak Spesial <input type="number" name="jml_spi" id="jml_spi"><br>
+        <button onclick="hitung()">Total Pembayaran</button>
+    </form>
+    <p id="hasil"></p>
+    <script>
+        function hitung(){
+            let menu1 = document.getElementById('menu1').checked;
+            let menu2 = document.getElementById('menu2').checked;
+            let menu3 = document.getElementById('menu3').checked;
+            let jml_ori = parseInt(document.getElementById('jml_ori').value) || 0;
+            let jml_tgl = parseInt(document.getElementById('jml_tgl').value) || 0;
+            let jml_spi = parseInt(document.getElementById('jml_spi').value) || 0;
+
+            let th_1 = 0, th_2 = 0, th_3 = 0;
+
+            if(menu1){
+                th_1 = 10000 * jml_ori;
+            }
+            if(menu2){
+                th_2 = 12000 * jml_tgl;
+            }
+            if(menu3){
+                th_3 = 15000 * jml_spi;
+            }
+            
+            let total_harga = th_1 + th_2 + th_3;
+        
+            document.getElementById('hasil').innerHTML = `Total Harga: Rp ${total_harga}`;
+        }
+    </script>
+</body>
+</html>
