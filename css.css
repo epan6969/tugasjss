@@ -1,4 +1,3 @@
-
 * {
     margin: 0;
     padding: 0;
@@ -50,7 +49,6 @@ h3 {
     margin-bottom: 30px;
 }
 
-
 .button {
     display: block;
     width: 100%;
@@ -69,7 +67,6 @@ h3 {
     background-color: #323232;
     transform: scale(1.05);
 }
-
 
 .image-container {
     display: flex;
@@ -94,11 +91,12 @@ h3 {
     transform: scale(1.1);
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
 }
-.nama{
+
+.nama {
     display: block;
     width: 100%;
     padding: 14px 0;
-    background-color: #0289f7;
+    background-color: #003cff;
     color: #ffffff;
     text-decoration: none;
     border-radius: 50px;
@@ -106,4 +104,9 @@ h3 {
     font-weight: 500;
     text-transform: uppercase;
     transition: background-color 0.3s, transform 0.3s;
+}
+
+.nama:hover {
+    background-color: #002bb5;
+    transform: scale(1.05);
 }
