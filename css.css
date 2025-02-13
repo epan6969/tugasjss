@@ -1,4 +1,4 @@
-/* Reset and basic setup */
+
 * {
     margin: 0;
     padding: 0;
@@ -43,7 +43,6 @@ h3 {
     color: #7F8C8D;
 }
 
-/* Button Container */
 .button-container {
     display: flex;
     flex-direction: column;
@@ -51,7 +50,7 @@ h3 {
     margin-bottom: 30px;
 }
 
-/* Button Styling */
+
 .button {
     display: block;
     width: 100%;
@@ -71,7 +70,7 @@ h3 {
     transform: scale(1.05);
 }
 
-/* Image Container */
+
 .image-container {
     display: flex;
     justify-content: center;
@@ -94,4 +93,17 @@ h3 {
 .image-card img:hover {
     transform: scale(1.1);
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+.nama{
+    display: block;
+    width: 100%;
+    padding: 14px 0;
+    background-color: #0289f7;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 50px;
+    font-size: 18px;
+    font-weight: 500;
+    text-transform: uppercase;
+    transition: background-color 0.3s, transform 0.3s;
 }
