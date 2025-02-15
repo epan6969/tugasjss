@@ -1,105 +1,70 @@
-* {
-    margin: 0;
+* {margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
-    background: linear-gradient(135deg, #667eea, #764ba2);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f7f7f7;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    color: #fff;
-    overflow: hidden;
+    color: #333;
 }
 
 .container {
-    background: rgba(255, 255, 255, 0.1);
+    background-color: #ffffff;
     padding: 40px;
-    border-radius: 20px;
-    backdrop-filter: blur(15px);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
     text-align: center;
     width: 100%;
-    max-width: 800px;
-    animation: fadeIn 1.5s ease-in-out;
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(-20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    max-width: 700px;
 }
 
 h1 {
-    font-size: 36px;
+    font-size: 32px;
     margin-bottom: 30px;
-    color: #fff;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-    animation: slideIn 1s ease-in-out;
-}
-
-@keyframes slideIn {
-    from {
-        opacity: 0;
-        transform: translateX(-50px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
+    color: #2C3E50;
 }
 
 h2 {
     font-size: 24px;
     margin-top: 25px;
-    color: #fff;
+    color: #34495E;
 }
 
 h3 {
     font-size: 20px;
     margin-bottom: 15px;
-    color: #fff;
+    color: #7F8C8D;
 }
 
 .button-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
     margin-bottom: 30px;
 }
 
 .button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: block;
+    width: 100%;
     padding: 14px 0;
-    background: rgba(255, 255, 255, 0.2);
-    color: #fff;
+    background-color: #00060b;
+    color: #ffffff;
     text-decoration: none;
     border-radius: 50px;
     font-size: 18px;
     font-weight: 500;
     text-transform: uppercase;
-    transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
-    border: 2px solid rgba(255, 255, 255, 0.3);
-}
-
-.button i {
-    margin-right: 10px;
+    transition: background-color 0.3s, transform 0.3s;
 }
 
 .button:hover {
-    background: rgba(255, 255, 255, 0.4);
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    background-color: #323232;
+    transform: scale(1.05);
 }
 
 .image-container {
@@ -111,47 +76,36 @@ h3 {
 
 .image-card {
     text-align: center;
-    background: rgba(255, 255, 255, 0.1);
-    padding: 15px;
-    border-radius: 15px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.image-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
 }
 
 .image-card img {
     border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
     width: 200px;
     height: 150px;
-    object-fit: cover;
+}
+
+.image-card img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
 }
 
 .nama {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: block;
     width: 100%;
     padding: 14px 0;
-    background: rgba(0, 60, 255, 0.8);
-    color: #fff;
+    background-color: #003cff;
+    color: #ffffff;
     text-decoration: none;
     border-radius: 50px;
     font-size: 18px;
     font-weight: 500;
     text-transform: uppercase;
-    transition: background 0.3s, transform 0.3s;
-    margin-top: 20px;
-}
-
-.nama i {
-    margin-right: 10px;
+    transition: background-color 0.3s, transform 0.3s;
 }
 
 .nama:hover {
-    background: rgba(0, 45, 181, 0.9);
-    transform: translateY(-5px);
-}
+    background-color: #002bb5;
+    transform: scale(1.05); 
+} 
