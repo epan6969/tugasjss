@@ -4,21 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kumpulan Tugas</title>
-    <link rel="stylesheet" href="css.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="js.js">
     <link rel="icon" href="ino senum.jpg" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container">
+        <!-- Dark Mode Toggle -->
+        <div class="dark-mode-toggle">
+            <input type="checkbox" id="darkModeToggle">
+            <label for="darkModeToggle" class="toggle-label">
+                <i class="fas fa-moon"></i>
+                <i class="fas fa-sun"></i>
+            </label>
+        </div>
+
         <header>
-           
-            
+            <h1>Kumpulan Tugas</h1>
+            <p class="subtitle">Selamat datang! Jelajahi tugas-tugas berikut.</p>
         </header>
-        <h1>Kumpulan Tugas</h1>
-        <p class="subtitle">Selamat datang! Pilih tugas yang ingin kamu akses.</p>
+
         <main>
             <div class="task-grid">
+                <!-- Task Cards -->
                 <div class="task-card"><a href="lat.html"><i class="fas fa-code"></i><h3>Latihan JS</h3></a></div>
                 <div class="task-card"><a href="latluaspersegi.html"><i class="fas fa-shapes"></i><h3>Luas Persegi</h3></a></div>
                 <div class="task-card"><a href="latsegitiga.html"><i class="fas fa-triangle"></i><h3>Segitiga</h3></a></div>
@@ -39,16 +49,20 @@
                 <div class="task-card"><a href="prr.html"><i class="fas fa-tasks"></i><h3>Pengulangan V9.0 (PR)</h3></a></div>
             </div>
 
+            <!-- Profile Button -->
             <a href="epan.html" class="profile-button">
                 <i class="fas fa-user"></i>
                 <span>Bio Data</span>
             </a>
 
+            <!-- Image Gallery -->
             <div class="image-container">
                 <div class="image-card"><h3>💖 MY ISTRI</h3><img src="tenka.jpg" alt="My Istri"></div>
                 <div class="image-card"><h3>🙋‍♂️ GW</h3><img src="ino senum.jpg" alt="Gua"></div>
             </div>
         </main>
     </div>
+
+    <script src="js.js"></script>
 </body>
 </html>
