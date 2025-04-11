@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html lang="in">
+<head>
+    <meta charset="UTF-8">
+    <title>Lat Flowchart3</title>
+</head>
+<body>
+    <h1>Daftar Buah yang Dibeli</h1>
+    <!-- Form untuk memasukkan data buah -->
+    <form method="post" onsubmit="return false">
+        <label for="nb">Nama Buah:</label>
+        <input type="text" id="nb" required> <br>
+
+        <label for="hpk">Harga Per Kilo (Rp):</label>
+        <input type="number" id="hpk" required> <br>
+
+        <label for="jk">Jumlah Kilo:</label>
+        <input type="number" id="jk" required> <br>
+
+        <button onclick="jumlahBayar()">Jumlah Pembayaran</button>
+    </form>
+
+    <!-- Tempat untuk menampilkan hasil -->
+    <p id="output"></p>
+
+    <script>
+        function jumlahBayar() {
+            // Mengambil nilai input dari form
+            let nb = document.getElementById('nb').value;               // Nama buah
+            let hpk = parseFloat(document.getElementById('hpk').value);  // Harga per kilo
+            let jk = parseFloat(document.getElementById('jk').value);   // Jumlah kilo
+
+            // Menghitung total harga sebelum diskon (harga per kilo * jumlah kilo)
+            let totalHarga = hpk * jk;
+
+            // Inisialisasi nilai diskon
+            let diskon = 0;
+
+            // Tentukan diskon berdasarkan total harga
+            if (totalHarga > 100000) {
+                diskon = 0.10;  // 10% diskon jika total harga lebih dari 100.000
+            } else if (totalHarga > 5000 && totalHarga <= 100000) {
+                diskon = 0.05;  // 5% diskon jika total harga antara 5.000 dan 100.000
+            }
+
+            // Menghitung jumlah diskon yang akan diberikan
+            let jumlahDiskon = totalHarga * diskon;
+
+            // Menghitung harga setelah diskon
+            let hargaSetelahDiskon = totalHarga - jumlahDiskon;
+
+            // Menampilkan hasil ke dalam elemen dengan id 'output'
+            document.getElementById('output').innerHTML = `
+                <p>Nama Buah: ${nb}</p>
+                <p>Jumlah: ${jk} kg</p>
+                <p>Harga Per Kilo: Rp ${hpk.toLocaleString('id-ID')}</p>
+                <p>Total Belanja: Rp ${totalHarga.toLocaleString('id-ID')}</p>
+                <p>Diskon: ${diskon * 100}% (Rp ${jumlahDiskon.toLocaleString('id-ID')})</p>
+                <p>Harga Setelah Diskon: Rp ${hargaSetelahDiskon.toLocaleString('id-ID')}</p>
+            `;
+        }
+    </script>
+</body>
+</html>
