@@ -1,41 +1,58 @@
+
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aplikasi Pembayaran Fotocopy</title>
+    <title>latihan percabangan</title>
 </head>
 <body>
-    <h1>Aplikasi Pembayaran Fotocopy</h1>
-    <form action="" method="post" onsubmit="return false">
-        <label for="anggota">Pilih Anggota:</label>
-        <select id="anggota" name="anggota">
-            <option value="Bulkan">Bulkan Pelanggan</option>
-            <option value="Anggota1">Anggota 1</option>
-            <option value="Anggota2">Anggota 2</option>
-        </select><br><br>
-
-        <label for="jumlah">Jumlah Fotocopy:</label>
-        <input type="number" id="jumlah" name="jumlah"><br><br>
-
-        <button onclick="hitungTotal()">Hitung Total Bayar</button>
-        <p id="totalBayar"></p>
-    </form>
-
+    <div>
+        <h1>Aplikasi pembayaran</h1>
+        <form method="post" onsubmit="return false">
+        <label>pilih anggota</label> <br>
+        <input type="radio" name="status" id="pelanggan" value="pelanggan">
+        <label for="pelanggan">pelanggan</label>
+        <input type="radio" name="status" id="bukan pelanggan"value>
+        <label for="bukan pelanggan">bukan pelanggan</label> <br> <br>
+        <label for="jumlah">jumlah fotocopy</label> 
+        <input type="number" id="jumlah"> <br> <br>
+        <button onclick="hitungbayar()">hitung pembayaran</button>
+        </form>
+        <p id="hasil"></p>
+    </div>
     <script>
-        function hitungTotal() {
-            const hargaPelanggan = 85; // Harga per fotocopy untuk pelanggan
-            const hargaNonPelanggan = 100; // Harga per fotocopy untuk non-pelanggan
-            const jumlahFotocopy = document.getElementById('jumlah').value;
-            const anggota = document.getElementById('anggota').value;
-
-            // Cek apakah pelanggan atau bukan
-            const hargaPerFotocopy = (anggota === "Bulkan") ? hargaPelanggan : hargaNonPelanggan;
-
-            const totalBayar = jumlahFotocopy * hargaPerFotocopy;
-
-            document.getElementById('totalBayar').innerHTML = "Total Bayar: Rp " + totalBayar.toLocaleString('id-ID');
+        function hitungbayar(){
+        let jumlah = parseInt(document.getElementById('jumlah').value);
+        let hpp = 0;
+        let hasil = 0;
+        if ( document.getElementById('pelanggan').checked) {
+            status = "pelanggan"
         }
+        if (document.getElementById( 'bukan pelanggan').checked){
+            status = "bukan pelanggan"
+        }
+        document.getElementById('hasil').innerHTML =status
+        if (status == "pelanggan") {
+                hpp = 75;
+            } else {
+                if (jumlah <= 100) {
+                    hpp = 100;
+                } else {
+                    hpp = 85;
+                }
+            }
+    
+            let hp = jumlah * hpp;
+
+            document.getElementById('hasil').innerHTML = `
+                status: ${status} <br>
+                jumlah fotocopy: ${jumlah} <br>
+                total pembayaran : ${hp}
+
+            `;
+    }
     </script>
 </body>
 </html>
+      
